@@ -13,13 +13,17 @@ export const componentStyles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    paddingTop: 6,
-    paddingBottom: 6,
-    alignSelf: 'flex-end',
+  },
+  logo: {
+    alignSelf: 'center',
+    marginBottom: 64,
   },
 });
 
 export const styles = StyleSheet.create({
+  marginBottomSmall: {
+    marginBottom: 8,
+  },
   marginBottomNormal: {
     marginBottom: 16,
   },
@@ -30,6 +34,7 @@ export const styles = StyleSheet.create({
 
 export const theme = {
   ...DefaultTheme,
+  myOwnProperty: true,
   colors: {
     ...DefaultTheme.colors,
     primary: '#111111',

@@ -1,40 +1,51 @@
 import React from 'react';
-import {View, Image} from 'react-native';
+import {View, Linking} from 'react-native';
+import {Button, TextInput, Caption} from 'react-native-paper';
 import {componentStyles, styles} from '../../Stylesheet';
-import {Headline, Button, TextInput} from 'react-native-paper';
-import {Logo} from '../../assets/images';
+import Logo from '../../assets/images/logo.svg';
 
 export default function LoginPage() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   let isFilled = email && password ? false : true;
+  const [isVisible, setPasswordVisibility] = React.useState(true);
 
   return (
     <View style={componentStyles.container}>
       <View style={componentStyles.safeViewContainer}>
-        <Image style={{height: 72}} source={Logo} />
+        <Logo height={48} style={componentStyles.logo} />
         <TextInput
           mode="outlined"
-          label="Email"
+          label="Surel"
+          keyboardType="email-address"
+          autoComplete="email"
           value={email}
-          style={styles.marginBottomNormal}
+          style={styles.marginBottomSmall}
           onChangeText={email => setEmail(email)}
         />
         <TextInput
           mode="outlined"
-          label="Password"
-          secureTextEntry={true}
+          label="Kata sandi"
+          secureTextEntry={isVisible}
           value={password}
           style={styles.marginBottomMedium}
           onChangeText={password => setPassword(password)}
+          right={
+            <TextInput.Icon
+              name={isVisible ? 'eye-off' : 'eye'}
+              onPress={() => setPasswordVisibility(isVisible ? false : true)}
+            />
+          }
         />
         <Button
           mode="contained"
           disabled={isFilled}
-          onPress={() => console.log('Pressed')}
-          style={componentStyles.button}>
-          Login
+          style={(componentStyles.button, styles.marginBottomNormal)}>
+          Masuk
         </Button>
+        <Caption onPress={() => Linking.openURL('http://google.com')}>
+          Lupa kata sandi?
+        </Caption>
       </View>
     </View>
   );
