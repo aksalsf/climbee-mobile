@@ -1,13 +1,18 @@
 import {StyleSheet} from 'react-native';
+import {DefaultTheme} from 'react-native-paper';
 
-const styles = StyleSheet.create({
-  input: {
-    height: 54,
-    margin: 16,
-    borderWidth: 1,
-    borderRadius: 4,
-    padding: 14,
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '90%',
   },
 });
 
-export default styles;
+export const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#111111',
+    accent: '#cccccc',
+  },
+};

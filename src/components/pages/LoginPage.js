@@ -1,21 +1,24 @@
 import React from 'react';
-import {SafeAreaView, TextInput} from 'react-native';
-import styles from '../../Stylesheet';
+import {View} from 'react-native';
+import {styles} from '../../Stylesheet';
+import {Button, TextInput} from 'react-native-paper';
 
 export default function LoginPage() {
-  const [text, onChangeText] = React.useState(null);
+  const [text, setText] = React.useState('');
+
   return (
-    <SafeAreaView>
+    <View style={styles.container}>
       <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
+        label="Email"
         value={text}
+        onChangeText={text => setText(text)}
       />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-    </SafeAreaView>
+      <Button
+        icon="camera"
+        mode="contained"
+        onPress={() => console.log('Pressed')}>
+        Press me
+      </Button>
+    </View>
   );
 }
