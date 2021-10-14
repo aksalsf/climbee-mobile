@@ -5,7 +5,7 @@ import {Button, TextInput, Caption, Divider} from 'react-native-paper';
 import {Styles, ComponentStyles} from '../../Stylesheet';
 import Logo from '../../assets/images/logo.svg';
 
-const LoginPage = () => {
+const LoginPage = ({navigation}) => {
   /* data input user */
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -58,7 +58,10 @@ const LoginPage = () => {
         </Button>
         <Divider style={Styles.marginBottomNormal} />
         {/* register button */}
-        <Button mode="outlined" style={ComponentStyles.button}>
+        <Button
+          mode="outlined"
+          style={ComponentStyles.button}
+          onPress={() => navigation.navigate('Register')}>
           Daftar
         </Button>
       </View>

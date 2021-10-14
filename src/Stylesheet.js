@@ -24,6 +24,9 @@ export const Styles = StyleSheet.create({
   marginBottomLarge: {
     marginBottom: 32,
   },
+  textCenter: {
+    textAlign: 'center',
+  },
 });
 
 export const ComponentStyles = StyleSheet.create({
