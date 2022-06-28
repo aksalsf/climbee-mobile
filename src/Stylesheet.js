@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {DefaultTheme} from 'react-native-paper';
+import { StyleSheet } from 'react-native';
+import { DefaultTheme } from 'react-native-paper';
 
 export const theme = {
   ...DefaultTheme,

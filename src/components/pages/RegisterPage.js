@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {TextInput, Button, Text, Caption, HelperText} from 'react-native-paper';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import {
+  TextInput,
+  Button,
+  Text,
+  Caption,
+  HelperText,
+} from 'react-native-paper';
 /* assets */
-import {ComponentStyles, Styles} from '../../Stylesheet';
+import { ComponentStyles, Styles } from '../../Stylesheet';
 import Logo from '../../assets/images/logo.svg';
 
-const RegisterPage = ({navigation}) => {
+const RegisterPage = ({ navigation }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
